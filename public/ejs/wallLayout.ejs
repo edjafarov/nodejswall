@@ -1,0 +1,23 @@
+<script>
+var tmplt = new EJS({url: '/ejs/message.ejs'})
+var socket = io.connect('<%=host%>');
+socket.emit('subscribe', "<%=wordToObserve%>");
+socket.on('newTwit', function (data) {
+ $("#twits").prepend(tmplt.render({message:data}));
+  });
+socket.on('followersChange', function (data) {
+ $(".container h2 span").html(data);
+  });  
+</script>
+
+<div class="container">
+    <h2><%=wordToObserve%> wall [<span><%-wordFollowers%></span> watch it now]</h2>
+    <div id="twits">
+    <%if(latest){%>
+    <%for (var i=0; i< latest.length; i++){ %>
+        <%- partial("public/ejs/message", {message: latest[i]}) %>
+    <%}
+    }%>
+    </div>
+</div>
+

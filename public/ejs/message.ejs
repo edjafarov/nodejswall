@@ -1,0 +1,22 @@
+    
+    <div class="row msg">
+        <div class="span img">
+
+            <img src='<%=message.user?message.user.profile_image_url:message.profile_image_url%>' /> 
+        </div>
+        <div class="span">
+
+        <small><%=message.user?message.user.name:message.from_user%> <a href='http://twitter.com/#!/<%=message.user?message.user.screen_name:message.from_user%>'><b>@<%=message.user?message.user.screen_name:message.from_user%></b></a></small> 
+        <p>
+            <%if(message.user){%>
+                <%= message.text.replace(/(https?:\/\/[^\s]*)/ig,"<a href=' $1'>$1</a>")%>
+            <%}else{%>
+                <%- message.text.replace(/(https?:\/\/[^\s]*)/ig,"<a href='$1'>$1</a>")%>
+            <%}%>
+            
+        </p>
+        <small class="time">
+        <%=message.created_at%>
+        </small>
+        </div>
+    </div>

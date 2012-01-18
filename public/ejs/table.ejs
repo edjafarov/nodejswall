@@ -1,0 +1,18 @@
+<div class="topTable">
+<% 
+var _i = 0;
+for (var word in words) {
+
+%>
+<%if(word != "null" && words[word]!=0){%>
+<%_i++;%>
+<div class="row">
+<div class="span4"><strong><a href="<%-host%>/<%=word%>"><%=word%></a/></strong></div> 
+<div class="span4"><%=words[word]%> watchers</div>
+</div>
+<%}%>
+<%}
+if(_i==0){%>
+	<div> there is no wall watchers yet</div>
+<%}%>
+</div>

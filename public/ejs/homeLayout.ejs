@@ -1,0 +1,17 @@
+<script>
+var tmplt = new EJS({url: '/ejs/table.ejs'})
+var socket = io.connect('<%=host%>');
+socket.emit('watchAll');
+socket.on('wordsChange', function (data) {
+  $("#twits").html(tmplt.render({words:data.words,client:true,host:"<%=host%>"}));
+});
+</script>
+
+<div class="container">
+    <h2>TOP WORDS</h2>
+    <div id="twits">
+    <%- partial("public/ejs/table", {words: words}) %>
+    </div>
+</div>
+
+

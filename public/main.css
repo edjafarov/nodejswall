@@ -1,0 +1,46 @@
+body {
+	background-color:#FFEBEB;
+}
+.topTable{
+    padding: 10px 0;
+}
+#twits{
+	background-color: #FFFFFF;
+	-moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #DDDDDD;
+    padding: 0 10px;
+}
+.container {
+    width: 522px;
+    }
+    
+.msg > div + div{
+    width: 430px;
+    }
+.msg > .img{
+	width: 48px;
+	margin-left: 0;
+}
+.msg > .img img{
+	-moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -khtml-border-radius: 2px;
+    border-radius: 2px;
+    width: 48px;
+}
+
+.msg{
+	padding: 10px 0 0 0;
+	margin-left: 0;
+}
+.msg + .msg{
+	border-top: 1px solid #DDDDDD;
+}
+
+.msg .time{
+	color: #AAAAAA;
+	font-size: 85%;
+}
