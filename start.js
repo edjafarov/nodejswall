@@ -6,7 +6,7 @@ nconf.argv()
        .file({ file: './config.json' });
 
 
-var PORT = nconf.get('port');
+var PORT = nconf.get('PORT');
 
 var HOST = nconf.get('host') + (PORT?(":"+PORT):"");
 console.log(HOST);

@@ -1,5 +1,5 @@
 # nodejswall
-Twitter wall written totally in Node.js
+Twitter wall written totally in Node.js.
 Can watch up to 500 words simultaneously. 
 
 ## install
