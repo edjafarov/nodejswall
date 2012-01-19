@@ -9,7 +9,7 @@ nconf.argv()
 var PORT = nconf.get('PORT');
 
 var HOST = nconf.get('host') + (PORT?(":"+PORT):"");
-
+console.log(HOST);
 
 var twit = new twitter({
     consumer_key: nconf.get('consumer_key'),
