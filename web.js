@@ -43,6 +43,7 @@ function startTwitObserving(word) {
         twit.stream('statuses/filter', {
             track: listWordsToObserve.join(",")
         }, function(stream) {
+            console.log("stream");
             twitterStream = stream;
             
             stream.on('data', function(data) {
