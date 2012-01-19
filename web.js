@@ -8,7 +8,7 @@ nconf.argv()
 
 var PORT = nconf.get('PORT');
 
-var HOST = nconf.get('host') + (PORT?(":"+PORT):"");
+var HOST = nconf.get('host');
 console.log(HOST);
 
 var twit = new twitter({
